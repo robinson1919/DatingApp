@@ -1,5 +1,8 @@
 <div class="container mt-4">
   <div class="row">
+    <h1>{{user.knownAs}}'s Profile</h1>
+  </div>
+  <div class="row">    
     <div class="col-sm-4">
       <div class="card">
         <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.knownAs}}">
@@ -31,7 +34,7 @@
     </div>
     <div class="col-sm-8">
       <div class="tab-panel">
-        <ngb-tabset class="member-tabset pb-2" [destroyOnHide]="true" type="pills">
+        <!-- <ngb-tabset class="member-tabset pb-2" [destroyOnHide]="true" type="pills">
           <ngb-tab title="About {{user.knownAs}}">
             <ng-template ngbTabContent>
               <h4>Description</h4>
@@ -48,7 +51,7 @@
           </ngb-tab>
           <ngb-tab title="Photos">
             <ng-template ngbTabContent>
-              <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery> -->
+              <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
             </ng-template>
           </ngb-tab>
           <ngb-tab title="Messages">
@@ -56,8 +59,28 @@
               <p>Messages will go here</p>
             </ng-template>
           </ngb-tab>
-        </ngb-tabset>
-      </div>
+        </ngb-tabset> -->
+        <tabset class="member-tabset pb-2">
+          <tab heading="About {{user.knownAs}}" >
+            <h4>Description</h4>
+            <p>{{user.introduction}}</p>
+            <h4>Looking For</h4>
+            <p>{{user.lookingFor}}</p>
+          </tab>
+          <tab heading="Interests">
+            <h4>Interests</h4>
+            <p>{{user.interests}}</p>
+          </tab>
+          <tab heading="Photos">
+            <div *ngFor="let photo of user.photos">
+              <img src="{{photo.url}}" >
+            </div>
+            <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery> -->
+          </tab>
+          <tab heading="Messages">
+            <p>messages will be here</p>
+          </tab>
+        </tabset>
     </div>
   </div>
 </div>

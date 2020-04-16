@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,9 +26,19 @@ import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
+}
+
+export class CustomHammerConfig extends HammerGestureConfig {
+   overrides = {
+      pinch: { enables: false },
+      rotate: { enables: false }
+   };
 }
 
 @NgModule({
@@ -39,7 +51,8 @@ export function tokenGetter() {
       ListsComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
@@ -47,6 +60,8 @@ export function tokenGetter() {
       FormsModule,
       NgbModule,
       RouterModule.forRoot(appRoutes),
+      TabsModule.forRoot(),
+      NgxGalleryModule,
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
@@ -62,7 +77,10 @@ export function tokenGetter() {
       AuthGuard,
       UserService,
       MemberDetailResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver,
+      PreventUnsavedChanges
+      // { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [
       AppComponent

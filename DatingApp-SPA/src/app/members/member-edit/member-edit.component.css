@@ -1,5 +1,18 @@
-p, strong, h4 {
+p, h4, label, h1, input, strong {
     color: white;
+}
+
+textarea, input {
+    background-color: rgb(160, 155, 134);
+}
+
+.form-control {
+    color: #ffff!important;
+}
+
+.form-control:focus {
+    background-color: rgb(160, 155, 134);
+
 }
 
 .img-thumbnail {
@@ -22,4 +35,3 @@ p, strong, h4 {
     font-weight: bold;
     color: blue;
 }
-
