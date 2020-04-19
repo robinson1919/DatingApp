@@ -17,3 +17,14 @@
         max-width: 1400px!important;
     }
 }
+
+img {
+    max-height: 50px;
+    border: 2px solid white;
+    display: inline;
+}
+
+.navbar {
+    /* padding: 1rem 1rem; */
+    padding: 7px 5px!important;
+}
