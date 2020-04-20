@@ -1,3 +1,11 @@
 .alertify-notifier.ajs-top {
     top: 50px!important;
 }
+
+i {
+    color: white;
+}
+
+/* .mat-datepicker-content .ng-tns-c105-1 .ng-trigger .ng-trigger-transformPanel .ng-star-inserted {
+    transform-origin: none!important;
+} */
