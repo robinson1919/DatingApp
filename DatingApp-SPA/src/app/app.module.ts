@@ -9,7 +9,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FileUploadModule } from 'ng2-file-upload';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TimeAgoPipe } from 'time-ago-pipe';
+// import { DatePipesModule } from 'ng-datefns-pipes';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -60,7 +60,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      TimeAgoPipe
    ],
    imports: [
       BrowserModule,
@@ -68,6 +67,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       FormsModule,
       ReactiveFormsModule,
       NgbModule,
+      // DatePipesModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       BsDatepickerModule.forRoot(),
