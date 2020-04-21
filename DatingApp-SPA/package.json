@@ -25,6 +25,7 @@
     "@auth0/angular-jwt": "^4.0.0",
     "@kolkov/ngx-gallery": "^1.1.0",
     "@ng-bootstrap/ng-bootstrap": "^6.0.1",
+    "@thisissoon/angular-timesince": "^2.1.0",
     "alertifyjs": "^1.13.1",
     "awesome": "0.0.7",
     "bootstrap": "^4.4.1",
@@ -60,6 +61,6 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.8.3"
   }
 }

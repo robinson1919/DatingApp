@@ -9,6 +9,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FileUploadModule } from 'ng2-file-upload';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TimeSinceModule } from '@thisissoon/angular-timesince';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -73,6 +74,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BrowserAnimationsModule,
       NgxGalleryModule,
       FileUploadModule,
+      TimeSinceModule,
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
