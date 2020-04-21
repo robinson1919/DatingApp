@@ -1,3 +1,17 @@
-p {
+p, h2, label {
     color: white;
 }
+
+/* /deep/ .pagination .page-item .page-link {
+    border-radius: 0 !important;
+  } */
+  
+/* /deep/ .pagination .page-link { */
+    /* border-top-style: none !important;
+    border-bottom-style: none !important; */
+    /* background-color: #375a7f !important;
+    color: #ffff !important;
+} */
+
+
+
