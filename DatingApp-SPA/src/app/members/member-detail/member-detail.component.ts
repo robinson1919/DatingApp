@@ -4,6 +4,7 @@ import { UserService } from 'src/app/_services/user.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
+import { AuthService } from 'src/app/_services/auth.service';
 // import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 
 @Component({
@@ -16,7 +17,10 @@ export class MemberDetailComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor(private userService: UserService, private alertify: AlertifyService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService,
+              private alertify: AlertifyService,
+              private route: ActivatedRoute,
+              private authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -40,6 +44,15 @@ export class MemberDetailComponent implements OnInit {
         big: 'https://images.pexels.com/photos/3041347/pexels-photo-3041347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
       }
     ];
+  }
+
+  sendLike(id: number) {
+    this.userService.sendLike(this.authService.decodedToken.nameid, id)
+      .subscribe(data => {
+      this.alertify.success('You have liked ' + this.user.knownAs);
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
   // getImages() {
