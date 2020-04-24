@@ -1,0 +1,19 @@
+table {
+    margin-top: 15;
+}
+
+.img-circle {
+    max-height: 50px;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.b {
+    border-bottom: 0.5px solid white;
+}
+
+.b:hover {
+    background-color: gray;
+}
