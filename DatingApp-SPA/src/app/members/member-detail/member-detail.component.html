@@ -34,32 +34,6 @@
     </div>
     <div class="col-sm-8">
       <div class="tab-panel">
-        <!-- <ngb-tabset class="member-tabset pb-2" [destroyOnHide]="true" type="pills">
-          <ngb-tab title="About {{user.knownAs}}">
-            <ng-template ngbTabContent>
-              <h4>Description</h4>
-              <p>{{user.introduction}}</p>
-              <h4>Looking For</h4>
-              <p>{{user.lookingFor}}</p>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Interests">
-            <ng-template ngbTabContent>
-              <h4>Interests</h4>
-              <p>{{user.interests}}</p>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Photos">
-            <ng-template ngbTabContent>
-              <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
-            </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Messages">
-            <ng-template ngbTabContent>
-              <p>Messages will go here</p>
-            </ng-template>
-          </ngb-tab>
-        </ngb-tabset> -->
         <tabset class="member-tabset pb-2" #memberTabs>
           <tab heading="About {{user.knownAs}}" >
             <h4>Description</h4>
@@ -71,11 +45,8 @@
             <h4>Interests</h4>
             <p>{{user.interests}}</p>
           </tab>
-          <tab heading="Photos">
-            <div *ngFor="let photo of user.photos">
-              <img src="{{photo.url}}" >
-            </div>
-            <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery> -->
+          <tab heading="Photos" class="align-items-center">            
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
           </tab>
           <tab heading="Messages">
             <app-member-messages [recipientId]="user.id"></app-member-messages>

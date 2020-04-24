@@ -44,13 +44,7 @@ export class MemberDetailComponent implements OnInit {
         preview: false
       }
     ];
-    this.galleryImages = [
-      {
-        small: 'https://images.pexels.com/photos/1749057/pexels-photo-1749057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-        medium: 'https://images.pexels.com/photos/3560451/pexels-photo-3560451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-        big: 'https://images.pexels.com/photos/3041347/pexels-photo-3041347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-      }
-    ];
+    this.galleryImages = this.getImages();
   }
 
   sendLike(id: number) {
@@ -62,18 +56,18 @@ export class MemberDetailComponent implements OnInit {
     });
   }
 
-  // getImages() {
-  //   const imageUrls = [];
-  //   for (const photo of this.user.photos) {
-  //     imageUrls.push({
-  //       small: photo.url,
-  //       medium: photo.url,
-  //       big: photo.url,
-  //       description: photo.description
-  //     });
-  //   }
-  //   return imageUrls;
-  // }
+  getImages() {
+    const imageUrls = [];
+    for (const photo of this.user.photos) {
+      imageUrls.push({
+        small: photo.url,
+        medium: photo.url,
+        big: photo.url,
+        description: photo.description
+      });
+    }
+    return imageUrls;
+  }
 
   selectTab(tabId: number) {
     this.memberTabs.tabs[tabId].active = true;
