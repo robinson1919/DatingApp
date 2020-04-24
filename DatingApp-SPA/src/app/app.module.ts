@@ -19,7 +19,7 @@ import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { ErrorInterceptorProvider } from './_services/error.interceptor';
+// import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -92,7 +92,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider,
+      // ErrorInterceptorProvider,
       AlertifyService,
       AuthGuard,
       UserService,
