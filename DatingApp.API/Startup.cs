@@ -83,16 +83,21 @@ namespace DatingApp.API
             app.UseRouting();
             
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseAuthorization();
             // app.UseMvc();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "spa-fallback",
+                    pattern: "{controller=FallBack}/{action=Index}");
+
+                endpoints.MapFallbackToController("Index", "FallBack");
             });
         }
     }
