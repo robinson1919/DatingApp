@@ -13,7 +13,7 @@ namespace DatingApp.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
@@ -38,7 +38,7 @@ namespace DatingApp.API.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -75,7 +75,7 @@ namespace DatingApp.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     SenderId = table.Column<int>(nullable: false),
                     RecipientId = table.Column<int>(nullable: false),
                     Content = table.Column<string>(nullable: true),
@@ -107,7 +107,7 @@ namespace DatingApp.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Url = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     DateAdded = table.Column<DateTime>(nullable: false),
